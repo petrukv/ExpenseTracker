@@ -1,8 +1,10 @@
+from django.contrib.auth.models import User
 from django.db import models
 
 # Create your models here.
 
 class Expense(models.Model):
+    owner = models.ForeignKey(User, on_delete=models.CASCADE, default=None)
     name = models.CharField(max_length=100)
     amount = models.IntegerField()
     category = models.CharField(max_length=100)

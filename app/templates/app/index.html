@@ -2,7 +2,8 @@
 {% load static %}
 {% load humanize %}
 {% block body %}
-        <div class="m-10 font-bold">Add Expense ➕</div>
+{% if user.is_authenticated %}
+    <div class="m-10 font-bold">Add Expense ➕</div>
 
     <form class="shadow-lg m-10 rounded-lg" method="post">
 
@@ -262,5 +263,5 @@ var myChart1 = new Chart(ctx1, {
 });
 
     </script>
-
+{% endif %}
 {% endblock %}
